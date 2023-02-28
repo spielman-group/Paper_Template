@@ -1,0 +1,81 @@
+%-----------------------------------------------------------------------------%
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}    
+\usepackage{amssymb,amsmath}
+\usepackage{graphicx}
+\usepackage{braket}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{gensymb} %for degree symbol
+\usepackage{bbold}
+\usepackage{physics}
+\usepackage[normalem]{ulem}
+
+% Define counters for reviewers and their points
+\newcounter{reviewer}
+\setcounter{reviewer}{0}
+\newcounter{point}[reviewer]
+\setcounter{point}{0}
+
+\def\ex{\mathbf{e}_x}  
+\def\ey{\mathbf{e}_y}  
+\newcommand{\rfph}{\phi_{\text{rf}}}
+\newcommand{\Omrf}{\Omega_{\text{rf}}}
+
+\newcommand{\edit}[2][]{{\textcolor{green}{\sout{#1}}} {\leavevmode\color{red}{#2}}}
+
+
+% This refines the format of how the reviewer/point reference will appear.
+\renewcommand{\thepoint}{P\,\thereviewer.\arabic{point}} 
+
+% command declarations for reviewer points and our responses
+\newcommand{\reviewersection}{\stepcounter{reviewer} \bigskip \hrule
+                  \section*{Reviewer \thereviewer : Specific Comments and Critiques}}
+
+\newenvironment{point}
+   {\refstepcounter{point} \bigskip \noindent {\textbf{Reviewer~Point~\thepoint} } ---\ }
+   {\par }
+\newenvironment{reply}
+   {\medskip \noindent \begin{sf}\textbf{Reply}:\  }
+   {\medskip \end{sf}}
+%-----------------------------------------------------------------------------%
+\begin{document}
+
+%\section*{Response to Reviewers}
+%\hrulefill
+
+\noindent Dear Referees,
+\bigskip
+
+We appreciate the thoughtful and constructive reviews from the referees and our point-by-point response follows.
+
+\bigskip
+\noindent For the authors,
+\\\\
+
+
+% Reviewer 1
+\reviewersection
+
+\begin{point}\label{pt:R1_1}
+Referee point 1...
+\end{point}
+\begin{reply}
+and our response
+\end{reply}
+
+% Reviewer 2
+\reviewersection
+\noindent None
+
+\begin{point}\label{pt:R2_1}
+Reviewer 2 comment
+\end{point}
+
+\begin{reply}
+And our response...
+\end{reply}
+
+
+\end{document}
