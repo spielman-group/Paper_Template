@@ -1,7 +1,7 @@
 %-----------------------------------------------------------------------------%
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{fullpage}    
+\usepackage{fullpage}
 \usepackage{amssymb,amsmath}
 \usepackage{graphicx}
 \usepackage{braket}
@@ -10,35 +10,99 @@
 \usepackage{gensymb} %for degree symbol
 \usepackage{bbold}
 \usepackage{physics}
+\usepackage[square,numbers]{natbib}
 \usepackage[normalem]{ulem}
+\usepackage{hyperref} % Hyperlinks
+\usepackage[most]{tcolorbox}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=blue,
+    urlcolor=blue
+}
+
+\bibliographystyle{unsrtnat}
+
+\definecolor{block-gray}{gray}{0.95}
 
 % Define counters for reviewers and their points
 \newcounter{reviewer}
 \setcounter{reviewer}{0}
 \newcounter{point}[reviewer]
 \setcounter{point}{0}
+\newcounter{subpoint}[point]
+\setcounter{subpoint}{0}
 
-\def\ex{\mathbf{e}_x}  
-\def\ey{\mathbf{e}_y}  
-\newcommand{\rfph}{\phi_{\text{rf}}}
-\newcommand{\Omrf}{\Omega_{\text{rf}}}
-
-\newcommand{\edit}[2][]{{\textcolor{green}{\sout{#1}}} {\leavevmode\color{red}{#2}}}
+\newtcolorbox{quotebox}[2][]{%
+    colback=block-gray,
+    %grow to left by=-5mm,
+    boxrule=0pt,
+    boxsep=0pt,
+    breakable,
+    enhanced jigsaw,
+    borderline west={4pt}{0pt}{gray},
+    title={#2},
+    colbacktitle={block-gray},
+    coltitle={black},
+    fonttitle={\bfseries},
+    attach title to upper={},
+    #1,
+}
 
 
 % This refines the format of how the reviewer/point reference will appear.
-\renewcommand{\thepoint}{P\,\thereviewer.\arabic{point}} 
+\renewcommand{\thepoint}{P\,\thereviewer.\arabic{point}}
+\renewcommand{\thesubpoint}{\thepoint.\arabic{subpoint}}
 
 % command declarations for reviewer points and our responses
 \newcommand{\reviewersection}{\stepcounter{reviewer} \bigskip \hrule
-                  \section*{Reviewer \thereviewer : Specific Comments and Critiques}}
+    \section*{Reviewer \thereviewer : Specific Comments and Critiques}}
 
-\newenvironment{point}
-   {\refstepcounter{point} \bigskip \noindent {\textbf{Reviewer~Point~\thepoint} } ---\ }
-   {\par }
+% Reviewer's point with subpoint numbering
+\newenvironment{point}[1]
+{
+    \bigskip \refstepcounter{point} \label{#1}
+    \noindent {\large\textbf{Reviewer~Point~\thepoint}} \bigskip
+    \begin{quotebox}{\refstepcounter{subpoint} \textbf{\thesubpoint} --- }
+}
+{
+    \end{quotebox}
+}
+
+% Reviewer's point without subpoint numbering
+\newenvironment{point*}[1]
+{
+    \bigskip \refstepcounter{point} \label{#1}
+    \noindent {\large\textbf{Reviewer~Point~\thepoint}}
+    \bigskip
+    \begin{quotebox}{}
+}
+{
+    \end{quotebox}
+}
+
+\newenvironment{subpoint}[1]
+{
+    \refstepcounter{subpoint} \label{#1}
+    \begin{quotebox}{{\textbf{\thesubpoint} --- }}
+}
+{
+    \end{quotebox}
+}
+
 \newenvironment{reply}
    {\medskip \noindent \begin{sf}\textbf{Reply}:\  }
    {\medskip \end{sf}}
+
+
+\def\ex{\mathbf{e}_x}
+\def\ey{\mathbf{e}_y}
+
+\newcommand{\delete}[1]{\textcolor{red}{\sout{#1}}}
+\newcommand{\edit}[2][]{{\textcolor{green}{\sout{#1}}} {\textcolor{red}{#2}}}
+\newcommand{\ibs}[1]{{\color{orange}[Ian: #1]}}
+
 %-----------------------------------------------------------------------------%
 \begin{document}
 
@@ -58,9 +122,9 @@ We appreciate the thoughtful and constructive reviews from the referees and our 
 % Reviewer 1
 \reviewersection
 
-\begin{point}\label{pt:R1_1}
+\begin{point*}{pt:R1_1}  % Reviewer point without subpoint numbering
 Referee point 1...
-\end{point}
+\end{point*}
 \begin{reply}
 and our response
 \end{reply}
@@ -69,12 +133,16 @@ and our response
 \reviewersection
 \noindent None
 
-\begin{point}\label{pt:R2_1}
+\begin{point*}{pt:R2_1}
 Reviewer 2 comment
-\end{point}
+\end{point*}
+
+\begin{subpoint}{pt:R2_1_1}
+This is a sub-point...
+\end{subpoint}
 
 \begin{reply}
-And our response...
+This is a reference to point \ref{pt:R1_1}...
 \end{reply}
 
 
