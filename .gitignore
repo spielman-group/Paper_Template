@@ -1,4 +1,22 @@
 # Specify filepatterns you want git to ignore.
 
+# Python-related temporary files
 .spyproject*
 *__pycache__*
+*.ipynb_checkpoints*
+
+# Latex output
+*.aux
+*.out
+*.log
+*.fdb_latexmk
+
+# Bibtex output
+*.bbl
+*.blg
+*.run.xml
+*.fls
+*.bcf
+
+# revtex4-1's footnote
+*Notes.bib
