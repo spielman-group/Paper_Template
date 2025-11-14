@@ -10,6 +10,16 @@
 \usepackage{siunitx}
 \usepackage{xcolor}
 \usepackage{physics}
+\usepackage{hyperref}
+\usepackage[normalem]{ulem}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=blue,
+    urlcolor=blue
+}
 
 % MACROS
 % AMO abbreviations
@@ -20,11 +30,16 @@
 \def\Er{E_{\rm R}}                            			% kr
 \def\El{E_L}                            				% kL
 \def\Rb87{^{87}\mathrm{Rb}}                             % Rb 87
-\def\K40{^{40}\mathrm{K}}                    		    % K 40 
+\def\K40{^{40}\mathrm{K}}                    		    % K 40
 
-\def\ex{\mathbf{e}_x}  
-\def\ey{\mathbf{e}_y}  
-\def\ez{\mathbf{e}_z}  
+\def\ex{\mathbf{e}_x}
+\def\ey{\mathbf{e}_y}
+\def\ez{\mathbf{e}_z}
+
+% Edit marks
+\newcommand{\delete}[1]{\textcolor{red}{\sout{#1}}}
+\newcommand{\edit}[2][]{{\textcolor{green}{\sout{#1}}} {\textcolor{red}{#2}}}
+\newcommand{\ibs}[1]{{\color{orange}[Ian: #1]}}
 
 \begin{document}
 
@@ -71,7 +86,7 @@ We introduce neat things that might relate to Ian's thesis~\cite{Spielman2004}.
 \begin{acknowledgments}
 The authors thank ABC for productive discussions, and DEF and GHI for carefully reading the manuscript.
 This work was partially supported by the National Institute of Standards and Technology, and the National Science Foundation through the Quantum Leap Challenge Institute for Robust Quantum Simulation (grant OMA-2120757).
-\end{acknowledgments} 
+\end{acknowledgments}
 
 \bibliography{main}
 
