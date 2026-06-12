@@ -14,7 +14,7 @@ This repository is a scientific manuscript package. The workflow priority is cor
 
 ## `RESULTS.md` Contract
 
-1. `AGENTS/RESULTS.md` is provisional working memory: the agent's extracted understanding of the manuscript, related discussion, and unresolved issues.
+1. `AGENTS/RESULTS.md` is provisional working memory: the agent's extracted understanding of the manuscript, relevant literature, related discussion, and unresolved issues.
 2. It may be stale, incomplete, or wrong.
 3. It coordinates agents; it does not outrank the manuscript draft.
 4. When the manuscript and `RESULTS.md` are in material scientific tension, ask the user which is correct before changing meaning.
@@ -27,8 +27,8 @@ This repository is a scientific manuscript package. The workflow priority is cor
 - `pi-structure`: End-to-end structural critique of the manuscript.
 - `pi-revision`: End-to-end manuscript markup review.
 - `editor`: Desk-review style editorial assessment against a target journal.
-- `reviewer`: Blind referee report derived from the manuscript only.
-- `reviewer-misconceptions`: Comparison of blind-review understanding against `AGENTS/RESULTS.md`.
+- `reviewer`: Blind referee report derived from the manuscript only; writes numbered review-round artifacts such as `AGENTS/REFEREE_REPORT_1.md` and `AGENTS/REFEREE_RESULTS_1.md`.
+- `reviewer-misconceptions`: Comparison of blind-review understanding against `AGENTS/RESULTS.md`; writes numbered review-round artifacts such as `AGENTS/REFEREE_MISCONCEPTIONS_1.md`.
 - `bibliography`: Bibliography cleaning, citation validation, and reference addition.
 - `paper-template-style`: Generic manuscript-package hygiene and layout checks.
 - `latex-build`: LaTeX build verification for the active manuscript scope.

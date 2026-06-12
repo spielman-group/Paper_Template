@@ -6,6 +6,44 @@ This is a template for starting papers in the Spielman group that has standardiz
 
 Notice that the figure files go in the root directory.  This is because Physical Review journals currently do not allow directories in their submission (but arxiv does), so conforming to this standard here will make submission easier.
 
+# AI-assisted manuscript workflow
+
+This template includes a manuscript-specific skill workflow for AI agents. The skills live under `.agents/skills/`, the shared agent state lives under `AGENTS/`, and the governing rules live in `AGENTS.md`.
+
+The most important shared state file is `AGENTS/RESULTS.md`. This is **not** treated as scientific truth. It is a provisional working model of what an agent has extracted from the manuscript, relevant literature, and related discussion. Literature-derived context is a normal and expected part of this file, especially when the `colleague` skill does prior-art checking or literature search. If the manuscript and `RESULTS.md` are in material tension, the agent should ask which is correct rather than silently forcing alignment.
+
+## What each skill is for
+
+- `colleague`: build a working understanding of the paper through scientific critique, questioning, and prior-art checking; creates or refreshes `AGENTS/RESULTS.md`
+- `coauthor`: mark up a bounded manuscript region with comments and replacements; edits the manuscript source in place
+- `pi-structure`: perform an end-to-end structural critique of the manuscript argument; writes `AGENTS/PI_STRUCTURE.md`
+- `pi-revision`: run a whole-document or bounded-scope markup review; edits the manuscript source in place
+- `reviewer`: perform a blind peer review from the manuscript alone; writes numbered review-round files such as `AGENTS/REFEREE_REPORT_1.md`, `AGENTS/REFEREE_REPORT_2.md`, and the matching `AGENTS/REFEREE_RESULTS_1.md`, `AGENTS/REFEREE_RESULTS_2.md`
+- `reviewer-misconceptions`: compare blind-review understanding against the shared working model; writes numbered review-round files such as `AGENTS/REFEREE_MISCONCEPTIONS_1.md` and `AGENTS/REFEREE_MISCONCEPTIONS_2.md`
+- `editor`: assess journal fit and editorial readiness; writes `AGENTS/EDITOR.md`
+- `bibliography`: add references, validate citations, and clean bibliography files; edits the relevant bibliography and citation-bearing manuscript files in place when needed
+- `latex-build`: compile the active manuscript and summarize failures or warnings; produces the usual LaTeX build artifacts for the active entrypoint
+- `paper-template-style`: inspect repository layout and reproducibility hygiene; reports issues and only applies safe mechanical cleanup when explicitly requested
+
+## Recommended order
+
+For a fresh draft:
+
+1. Start with `colleague` to stress-test the scientific story and produce or refresh `AGENTS/RESULTS.md`.
+2. Use `coauthor` for local paragraph work while drafting.
+3. Use `pi-structure` once a full draft exists.
+4. Use `pi-revision` after the structure is acceptable.
+5. Use `latex-build` before circulation or submission.
+6. Use `reviewer`, `reviewer-misconceptions`, and `editor` near submission.
+
+For targeted maintenance:
+
+- citation issue: `bibliography`
+- build failure: `latex-build`
+- repository organization issue: `paper-template-style`
+
+For the internal workflow architecture and artifact map, see `AGENTS/README.md`.
+
 # Starting the writing process
 
 Generally you should begin writing by making a schematic representation of your manuscript (this might be an outline, or a sketch of figures, it really depends on your internal representation of your result).  Starting from this schematic you need to identify the following:

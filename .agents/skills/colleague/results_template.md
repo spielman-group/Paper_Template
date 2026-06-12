@@ -5,11 +5,11 @@
 - **Worktree Status**: `[clean | dirty: summarize relevant manuscript-scope changes]`
 - **Refresh Scope**: `[full refresh | partial refresh | no literature refresh]`
 
-**Working-Memory Rule**: This file is an extracted working model of the manuscript and related discussion. It may be stale, incomplete, or wrong. It coordinates agents but does not override the manuscript.
+**Working-Memory Rule**: This file is an extracted working model of the manuscript, relevant literature, and related discussion. It may be stale, incomplete, or wrong. It coordinates agents but does not override the manuscript.
 
 ## 2. Literature & Domain Context
-- **State of the Field**: [Only the background needed for later agents to reason from the manuscript rather than from unsupported assumptions.]
-- **Prior Art Mapping**: [Key citations and the gap the manuscript is trying to fill.]
+- **State of the Field**: [Include only the literature-derived background needed for later agents to reason from the manuscript rather than from unsupported assumptions.]
+- **Prior Art Mapping**: [Record key citations, what they establish, and the gap the manuscript is trying to fill.]
 
 ## 3. Paper Summary
 [High-level summary of the current draft.]

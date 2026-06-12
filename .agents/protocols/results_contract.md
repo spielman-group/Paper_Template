@@ -10,9 +10,10 @@
 
 ## Meaning of `AGENTS/RESULTS.md`
 
-1. `AGENTS/RESULTS.md` is provisional working memory: an extracted model of the manuscript, related discussion, and unresolved issues.
+1. `AGENTS/RESULTS.md` is provisional working memory: an extracted model of the manuscript, relevant literature, related discussion, and unresolved issues.
 2. It may be stale, incomplete, or wrong.
 3. It is advisory context, not ground truth.
+4. Literature-derived context is a normal and expected part of `RESULTS.md`, especially when `colleague` performs prior-art checking or literature search.
 
 ## Trust States
 
