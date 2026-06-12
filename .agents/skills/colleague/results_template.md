@@ -1,30 +1,34 @@
-# Shared Scientific Context (RESULTS)
+# Provisional Working Model (RESULTS)
 
 ## 1. Metadata
 - **Git Commit**: `[output of git rev-parse HEAD]`
-- **Worktree Status**: `[clean | dirty: summarize relevant uncommitted files]`
-- **Refresh Scope**: `[full refresh | partial refresh | no literature refresh needed]`
+- **Worktree Status**: `[clean | dirty: summarize relevant manuscript-scope changes]`
+- **Refresh Scope**: `[full refresh | partial refresh | no literature refresh]`
+
+**Working-Memory Rule**: This file is an extracted working model of the manuscript and related discussion. It may be stale, incomplete, or wrong. It coordinates agents but does not override the manuscript.
 
 ## 2. Literature & Domain Context
-- **State of the Field**: [Deep, comprehensive summary of the current paradigm based on aggressive literature search. This must be detailed enough that follow-on agents rely on this documented context rather than their pre-trained background knowledge.]
-- **Prior Art Mapping**: [List of the most critical citations from the `.bib` file, summarizing what they achieved and explicitly stating the gap that this manuscript fills.]
+- **State of the Field**: [Only the background needed for later agents to reason from the manuscript rather than from unsupported assumptions.]
+- **Prior Art Mapping**: [Key citations and the gap the manuscript is trying to fill.]
 
 ## 3. Paper Summary
-[High-level abstract and goal of the paper. What is the core problem being solved?]
+[High-level summary of the current draft.]
 
-## 4. Core Scientific Claims
+## 4. Extracted Scientific Claims
 1. [Claim 1]
 2. [Claim 2]
 
 ## 5. Open Questions & Weaknesses
 - [Unresolved scientific debates]
-- [Logical gaps identified during discussion]
+- [Logical gaps]
 - [Missing references or data]
 
-## 6. Target Venue
-- **Journal/Audience**: [e.g., Physical Review Letters]
-- **Constraints**: [e.g., 3,750 word limit]
+## 6. Known Tensions / Unresolved Clarifications
+- [Material tension between the manuscript, prior `RESULTS.md`, user discussion, or agent interpretation.]
 
-## 7. Structural Outline / Figure Mapping
-- **Section 1**: [Purpose]
-- **Figure 1**: [What claim it supports]
+## 7. Target Venue
+- **Journal/Audience**: [if known]
+- **Constraints**: [if known]
+
+## 8. Structural Outline / Figure Mapping
+- **Section / Figure**: [What it is meant to support]

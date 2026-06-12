@@ -1,35 +1,19 @@
 ---
 name: latex-build
-description: "Compiles the LaTeX document to ensure reproducibility and checks for common errors."
+description: "Builds a LaTeX manuscript and reports warnings or failures."
 ---
 
 # latex-build
 
-## Purpose
+Read `.agents/protocols/results_contract.md` for manuscript-scope discovery.
 
-To compile the LaTeX manuscript and ensure the document builds successfully without critical errors or missing references.
+Build the active manuscript and report whether it is clean, warning-only, or blocked.
 
-## When to Use This Skill
-
-- You need to verify that recent edits have not broken the LaTeX build.
-- You are preparing the final PDF for review or submission.
-
-## Operating Rules
-
-1. **Compilation**:
-   - Execute the appropriate build commands (e.g., `latexmk`, `pdflatex`, and `bibtex`) to compile `main.tex`.
-   - If `latexmk` is unreliable in the current checkout, fall back to the manual sequence:
-     1. `bibtex main`
-     2. `pdflatex main.tex`
-     3. `pdflatex main.tex`
-   - Run sequential passes, not parallel LaTeX passes.
-2. **Error Checking**:
-   - Parse the build logs for `Overfull \hbox`, missing citations, undefined references, or fatal compilation errors.
-   - Distinguish among:
-     - `clean build`: compilation succeeds without important warnings.
-     - `warning build`: compilation succeeds, but warnings remain.
-     - `blocked build`: compilation fails or produces unusable output.
-3. **Reporting**:
-   - Provide a clear summary of the build status.
-   - If the build fails, pinpoint the exact line in `.tex` causing the issue and propose a fix.
-   - If the build succeeds only after a narrow mechanical workaround that does not alter scientific meaning, report that workaround explicitly.
+1. Build the active manuscript entrypoint. If multiple plausible entrypoints remain, ask the user which one to compile.
+2. Prefer `latexmk`. If manual passes are needed, use:
+   1. `pdflatex <entrypoint>`
+   2. `bibtex <basename>`
+   3. `pdflatex <entrypoint>`
+   4. `pdflatex <entrypoint>`
+3. Parse build logs for fatal errors, undefined references, missing citations, and important warnings such as overfull boxes.
+4. Report the build status and the narrowest actionable fix when blocked.
