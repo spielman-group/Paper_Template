@@ -1,11 +1,13 @@
 ---
 name: reviewer-misconceptions
 description: "Compares a blind reviewer's understanding against the manuscript working model."
+metadata:
+  uuid: "6e4c0454-666b-4725-a5f4-e12ef1a00f39"
 ---
 
 # reviewer-misconceptions
 
-Read `.agents/protocols/results_contract.md`.
+Read `.agents/protocols/writing/results_contract.md`.
 
 Compare a blind reviewer's extracted understanding against `AGENTS/RESULTS.md`.
 

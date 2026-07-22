@@ -1,11 +1,13 @@
 ---
 name: latex-build
 description: "Builds a LaTeX manuscript and reports warnings or failures."
+metadata:
+  uuid: "6562258b-681d-4c1f-8e0e-fcb66ae7ad92"
 ---
 
 # latex-build
 
-Read `.agents/protocols/results_contract.md` for manuscript-scope discovery.
+Read `.agents/protocols/writing/results_contract.md` for manuscript-scope discovery.
 
 Build the active manuscript and report whether it is clean, warning-only, or blocked.
 

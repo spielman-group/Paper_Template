@@ -1,11 +1,13 @@
 ---
 name: reviewer
 description: "Simulates a blind peer review of a manuscript."
+metadata:
+  uuid: "a2a7622f-48b9-45c7-8fd2-283cff3548f9"
 ---
 
 # reviewer
 
-Read `.agents/protocols/results_contract.md` only for manuscript-scope discovery. Do not read `AGENTS/RESULTS.md` or any other agent-generated state file.
+Read `.agents/protocols/writing/results_contract.md` only for manuscript-scope discovery. Do not read `AGENTS/RESULTS.md` or any other agent-generated state file.
 
 Produce a blind referee report and a blind reviewer's extracted understanding of the manuscript.
 

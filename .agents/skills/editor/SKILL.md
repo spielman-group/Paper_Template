@@ -1,11 +1,13 @@
 ---
 name: editor
 description: "Assesses a manuscript like a journal editor for journal fit and editorial readiness."
+metadata:
+  uuid: "6a6dd523-495b-4c44-a41b-01de62916176"
 ---
 
 # editor
 
-Read `.agents/protocols/results_contract.md`.
+Read `.agents/protocols/writing/results_contract.md`.
 
 Judge whether the draft clears the target journal's editorial bar.
 

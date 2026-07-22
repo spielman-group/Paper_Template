@@ -1,11 +1,13 @@
 ---
 name: paper-template-style
 description: "Checks a manuscript repository for layout and reproducibility hygiene problems."
+metadata:
+  uuid: "100a2827-1b1f-4308-80ae-35a6b8e8916c"
 ---
 
 # paper-template-style
 
-Read `.agents/protocols/results_contract.md` for manuscript-scope discovery.
+Read `.agents/protocols/writing/results_contract.md` for manuscript-scope discovery.
 
 Check the repository for generic manuscript-package hygiene problems.
 

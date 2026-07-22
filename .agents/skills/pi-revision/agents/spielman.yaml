@@ -1,0 +1,10 @@
+schema: 1
+exclude:
+  - .DS_Store
+  - __pycache__/**
+  - "*.pyc"
+requires:
+  protocols:
+    - writing/latex_markup.md
+    - writing/results_contract.md
+    - writing/scientific_critique.md

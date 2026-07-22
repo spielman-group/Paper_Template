@@ -1,11 +1,13 @@
 ---
 name: pi-structure
 description: "Reviews a manuscript end-to-end for structure, argument flow, and clarification points."
+metadata:
+  uuid: "9e8cfef9-1109-4340-9b74-857bf6e27778"
 ---
 
 # pi-structure
 
-Read `.agents/protocols/scientific_critique.md` and `.agents/protocols/results_contract.md`.
+Read `.agents/protocols/writing/scientific_critique.md` and `.agents/protocols/writing/results_contract.md`.
 
 Review the active manuscript scope end-to-end and describe the scientific argument it makes.
 

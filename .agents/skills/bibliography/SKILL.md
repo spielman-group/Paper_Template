@@ -1,11 +1,13 @@
 ---
 name: bibliography
 description: "Adds references and cleans or validates manuscript bibliographies."
+metadata:
+  uuid: "dc246bf8-1913-455f-80aa-445431d5dff7"
 ---
 
 # bibliography
 
-Read `.agents/protocols/results_contract.md` for manuscript-scope discovery.
+Read `.agents/protocols/writing/results_contract.md` for manuscript-scope discovery.
 
 Maintain bibliography files and citation integrity for the active manuscript scope.
 
